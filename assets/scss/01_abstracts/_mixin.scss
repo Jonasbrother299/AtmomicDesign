@@ -1,0 +1,31 @@
+@use 'sass:map';
+@use "../01_abstracts/breakpoints" as * ;
+@use "../01_abstracts/colors" as * ;
+
+@mixin mq($key) {
+    $size: map.get($breakpoints, $key);
+    @media (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin baseColumn {
+    padding: 20px 15px;
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin: 10px;
+    backdrop-filter: blur( 30px );
+}
+
+@mixin fullImage {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    max-width: 100%;
+    height: 212px;
+    object-fit: cover;
+}
+
+@mixin transition15 {
+    transition: (all 0.15s ease-out 0s)
+}

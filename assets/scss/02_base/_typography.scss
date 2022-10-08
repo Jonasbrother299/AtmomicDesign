@@ -1,0 +1,25 @@
+@use '../01_abstracts/' as *;
+
+    $font-family-headings: "FDASD";
+    $font-weight-headings: "FDAD";
+    $line-height-headings: "asdf";
+    $font-primary: 'Libre Baskerville', sans-serif ;
+    $font-secondary: serif;
+
+html {
+    font-family: $font-primary,  $font-secondary;
+}
+
+$font-sizes: ( 
+    h1: 48px,
+    h2: 36px,
+    h3: 24px,
+    h4: 18px,
+    p: 18px,
+);
+
+@each $tag, $size in $font-sizes {
+   #{$tag} {
+    font-size: $size;
+   }
+}

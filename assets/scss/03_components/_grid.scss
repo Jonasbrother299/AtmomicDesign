@@ -1,0 +1,64 @@
+@use "sass:math";
+@use 'sass:map';
+@use '../01_abstracts/' as *;
+
+$grid-columns: 12;
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 5em 4em;
+    padding: 20px;
+}
+
+.column {
+    padding: 20px 10px;
+    box-sizing: border-box;
+    flex-grow: 0;
+}
+
+@include mq(xs) {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-xs {
+           @include baseColumn;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+@include mq(sm) {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-sm {
+            @include baseColumn;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+
+@include mq(md) {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-md {
+            @include baseColumn;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+
+@include mq(lg) {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-lg {
+            @include baseColumn;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+
+@include mq(xl) {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-xl {
+            @include baseColumn;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+
+

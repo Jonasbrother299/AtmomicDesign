@@ -1,0 +1,13 @@
+@use '../01_abstracts/' as *;
+
+a {
+    color: $white;
+    text-decoration: none;
+    outline: 0;
+    @include transition15;
+
+    &:hover, 
+    &:focus {
+        color: lighten($accent-word, 20%);
+    }
+}
