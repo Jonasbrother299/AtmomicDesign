@@ -68,7 +68,7 @@ img {
 
 .container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-image: linear-gradient(rgba(57, 57, 57, 0.339), rgba(58, 14, 14, 0.297)), url(file:///C:/Jonas/Schule/Atomic%20Design/assets/picture/pic_01.jpg);
   background-position: center;
   background-size: cover;
@@ -81,6 +81,12 @@ img {
   width: 100%;
   padding-right: 8%;
   padding-left: 8%;
+}
+
+.container3 {
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
 }
 
 .accent {
@@ -634,10 +640,8 @@ table {
   border-collapse: collapse;
   width: 100%;
   table-layout: fixed;
-}
-
-tr:nth-child(even) {
-  background: #454545;
+  background: rgba(70, 17, 17, 0.231372549);
+  backdrop-filter: blur(30px);
 }
 
 tr:hover {
@@ -651,7 +655,6 @@ td {
   font-weight: 300;
   font-size: 12px;
   color: #fff;
-  border-bottom: solid 1px;
 }
 
 th {
@@ -740,13 +743,20 @@ nav ul li a {
 
 section {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  margin: 40px 0;
+  margin-bottom: 100px;
+}
+
+.section-start {
+  width: 100%;
+  height: 100%;
   margin: 40px 0;
   margin-bottom: 100px;
 }
 
 .section-liste {
-  height: 300vh;
+  height: 100%;
 }
 
 body {
