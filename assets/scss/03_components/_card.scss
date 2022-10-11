@@ -1,10 +1,127 @@
+@use '../01_abstracts/' as *;
+
 .card {
-    width: 300px;
-    height: 300px;
     display: inline-block;
     border-radius: 10px;
     padding: 15px 25px;
     box-sizing: border-box;
-    cursor: pointer;
     margin: 10px 15px;
+}
+.box {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include transition15;
+    &:nth-child(1):before, &:nth-child(1):after {
+    background: linear-gradient(315deg, #9b4300, #5e0121);
+}
+    .span {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        pointer-events: none;
+      
+      }
+    .span::after {
+        @include pseudoElementsBase;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        opacity: 0;
+        backdrop-filter: blur(10px);
+        transition: 0.5s;
+        animation: animate3 2s ease-in-out infinite;
+        box-shadow: 0 5px 15px $box-shadow2;
+        animation-delay: -1s;
+      }
+
+      .span::before {
+        @include pseudoElementsBase;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        opacity: 0;
+        backdrop-filter: blur(10px);
+        transition: 0.5s;
+        animation: animate3 2s ease-in-out infinite;
+        box-shadow: 0 5px 15px $box-shadow2;
+      }
+    &:hover {
+        .span::after {
+            bottom: -50px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            opacity: 1;
+          }
+          .span::before {
+            top: -50px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            opacity: 1;
+          }
+        &:before, &:after {
+          transform: skewX(0deg);
+          left: 20px;
+          width: calc(100% - 90px);
+          @include transition15;
+        }
+    }
+    &:after {
+        @include pseudoElementsBase;
+        top: 79px;
+        left: 50px;
+        width: 30%;
+        height: 70%;
+        border-radius: 8px;
+        transform: skewX(35deg);
+        filter: blur(70px);
+        @include transition15;
+    }
+    .content {
+        position: relative; 
+        left: 0;
+        padding: 20px 40px;
+        background-color: rgba(255,255,255, 0.05);
+        border-radius: 8px;
+        backdrop-filter: blur(10px);
+        color: white;
+        z-index: 1;
+        @include transition15;
+        h2 {
+            margin-bottom: 10px;
+            @include transition15;
+        }
+    }
+    &:hover {
+        .content {
+            left: -25px;
+            padding: 60px 40px;
+            @include transition15;
+        }
+    }
+}
+
+@keyframes animate3 {
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }

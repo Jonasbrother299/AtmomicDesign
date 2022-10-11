@@ -8,6 +8,6 @@ a {
 
     &:hover, 
     &:focus {
-        color: lighten($accent-word, 20%);
+        color: $accent-word;
     }
 }

@@ -13,12 +13,17 @@ section {
     height: 100%;
     margin: 40px 0;
     margin-bottom: 100px ;
-   
 }
-
 
 .section-liste {
     height: 100%;
+}
+.section__formular {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background: linear-gradient(to bottom, $accent, $secondary-color);
 }
 
 

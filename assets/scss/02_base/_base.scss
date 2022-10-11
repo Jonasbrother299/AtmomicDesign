@@ -10,19 +10,26 @@ html {
 *:after {
     box-sizing: inherit;
 }
-
+::-webkit-scrollbar {
+    width: 0;
+}
 body {
+    background-color: $Background;
     color: $white;
+    cursor: none;
+    margin: 0;
 }
 
 .center {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .left {
     justify-content: right;
 }
+
 img {
    @include fullImage ;
 }
@@ -34,9 +41,14 @@ img {
     margin: 0 auto;
     padding: 0 1rem;
     box-sizing: border-box;
+}
+.wrapper-column {
     flex-direction: column;
 }
 
+.wrapper-row {
+    flex-direction: row;
+}
 .container {
     width: 100%;
     height: 100%;
@@ -54,11 +66,6 @@ img {
     padding-left: 8%;
 }
 
-.container3 {
-width: 100%;
-height: 100%;
-background-color: aqua;
-}
 .accent {
     color: $accent-word;
 }

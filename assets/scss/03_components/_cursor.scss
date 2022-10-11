@@ -1,0 +1,32 @@
+@use '../01_abstracts/' as *;
+
+
+.cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+  }
+  .cursor--small {
+    width: 55px;
+    height: 55px;
+    left: -26.5px;
+    top: -26.5px;
+    border: 2px solid $outer-cursor;
+    border-radius: 50%;
+    z-index: 11000;
+   &:after {
+    @include pseudoElementsBase;
+    width: 15px;
+    height: 15px;
+    left: 18.5px;
+    top: 18.5px;
+    border-radius: 50%;
+    background: lighten($accent, 10%);
+   }
+  }
+  .cursor--canvas {
+    width: 100vw;
+    height: 100vh;
+    z-index: 12000;
+  }

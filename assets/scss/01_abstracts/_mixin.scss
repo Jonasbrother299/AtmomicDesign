@@ -9,6 +9,11 @@
     }
 }
 
+@mixin pseudoElementsBase {
+   content: "";
+   position: absolute;
+}
+
 @mixin baseColumn {
     padding: 20px 15px;
     box-sizing: border-box;

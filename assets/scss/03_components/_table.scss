@@ -1,28 +1,45 @@
 @use '../01_abstracts/' as *;
 
-table {
+.content-table {
     border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
     width: 100%;
+    min-width: 500px;
+    overflow-x: auto;
     table-layout: fixed;
-   background: $container-color;
-   backdrop-filter: blur(30px);
+    background: $container-color;
+    backdrop-filter: blur(30px);
+    thead  {
+        tr {
+            background-color: $container-color;
+            text-align: left;
+        }
+    }
+    th{
+        padding: 20px 15px;
+        text-align: left;
+        font-weight: 500;
+        font-size: 18px;
+        color: $white;
+        text-transform: uppercase;
+     
+      }
+      td{
+        padding: 15px;
+        text-align: left;
+        vertical-align:middle;
+        font-weight: 300;
+        font-size: 16px;
+        color: $white;
+        border-bottom: solid 1px $border-color;
+        &:hover {
+            background-color: rgb(118, 74, 4);
+        }
+      }
 }
 
-tr:hover {background-color: rgb(118, 74, 4);}
+thead  {
+    background: linear-gradient(120deg, $secondary-color2 0%, $secondary-color 49%, $accent 150%);
 
-td{
-    padding: 15px;
-    text-align: left;
-    vertical-align:middle;
-    font-weight: 300;
-    font-size: 12px;
-    color: #fff;
 }
-th {
-    padding: 20px 15px;
-    text-align: left;
-    font-weight: 500;
-    font-size: 12px;
-    color: #fff;
-    text-transform: uppercase;
-  }

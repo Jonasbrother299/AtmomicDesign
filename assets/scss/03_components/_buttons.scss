@@ -2,30 +2,43 @@
 
 button {
     width: 200px;
-    padding: 12px 0 ;
-    font-size: 12px;
+    padding: 18px 0 ;
+    font-size: 18px;
     border: 0;
     outline: 0;
     background: transparent;
-    border-radius: 20px;
+    border-radius: 30px;
     color: $white;
     font-size: x-large;
     margin: 4em 0;
+    border: 2px solid $grey;
+    @include transition15;
 }
 
 .primary {
-    background: $accent;
+    background: linear-gradient(196deg, rgba(36,0,6,1) 0%, $secondary-color 41%, $accent 100%);
     color: $white;
-    transition: 1s;
-    box-shadow: $secondary-color 2px 6px 20px 0px;
+    @include transition15;
+    border: 2px solid $secondary-color;
+    box-shadow:  9px 12px 25px -5px rgba($secondary-color, 0.8);
+    &:hover {
+        border: 2px solid $accent; 
+        @include transition15;
+    }
+    &:active {
+        transform: translate3d(0, 4px, 5px)
+    }
 }
 
 .secondary {
     border: 2px solid $secondary-color;
     transition: 1s;
-    box-shadow:  $secondary-color 2px 6px 20px 0px;
+    box-shadow:  9px 12px 25px -5px rgba($secondary-color, 0.8);
     &:hover {
         border: 2px solid $accent; 
-        transition: 1s; 
+        @include transition15;
+    }
+    &:active {
+        transform: translate3d(0, 4px, 5px)
     }
 }

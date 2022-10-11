@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="cursor cursor--small"></div>
+
+    <canvas class="cursor cursor--canvas" resize></canvas>
+    <div class="section__formular">
+      <div class="container__formular">
+        <div class="sqaure"></div>
+        <div class="sqaure"></div>
+        <div class="form">
+          <h2>Login Form</h2>
+          <form id="form" action="#">
+            <div class="inputbox">
+              <input
+                type="text"
+                id="email"
+                onkeyup="validate()"
+                placeholder="Email"
+              />
+              <span class="indicator"></span>
+            </div>
+            <div class="inputbox">
+              <input type="password" placeholder="Password" />
+            </div>
+            <div class="inputbox">
+              <input type="submit" value="Login" />
+            </div>
+            <p class="forget">
+              Forgot password ?
+              <a href="#">Click Here</a>
+            </p>
+            <p class="forget">
+              Dont have an account ?
+              <a href="#">Sign up</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./src/main.js"></script>
+    <script src="./src/validation.js"></script>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </body>
+</html>
